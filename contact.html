@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/home/CamerinG/stackblitz-BVN/Assets" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <script>
+        function submitForm()
+        {
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const feedback = document.getElementById("feedback").value;
+        
+                    const customerInfo = {
+                            name, email, feedback
+                    };
+            
+                    const keyValue = name;
+                    //save customer information to localStorage
+                    localStorage.setItem(keyValue, JSON.stringify(customerInfo));
+                        
+                    //access and parse local data back out of localStorage. 
+                    const who = JSON.parse( localStorage.getItem(name) );
+                    alert("Thank you for your feedback, "+ who.name +"!");
+        }
+        </script>
+  </head>
+  <body id="body">
+    <script src="header.js"></script>
+    <header class="header">
+    </header >
+    <div id="main">
+      <div id="webform">
+        <form> <div><p>Name:</p> <input id="name" type="text"></div> <div><p>Email:</p> <input id="email" type="text"></div> <div><p>Feedback/Order Info:</p><textarea id="feedback"></textarea></div> <button type="submit" onclick="submitForm()">Submit</button> <button type="reset">Clear</button></form>
+    </div>
+    </div>
+
+    <footer class="footer"></footer>
+  </body>
+</html>
