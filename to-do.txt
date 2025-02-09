@@ -1,2 +1,4 @@
 clean css file
 make hamburger menu response
+center product card images
+product card when width is xsmall
